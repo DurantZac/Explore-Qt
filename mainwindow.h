@@ -10,7 +10,7 @@
 #include <QVBoxLayout>
 #include <QSplitter>
 #include <QVector>
-
+#include <QMouseEvent>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,11 +21,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    QPushButton *buttonNext;
     ~MainWindow();
-
-public slots:
-    void onUpdate();
 
 private:
     Ui::MainWindow *ui;
@@ -34,9 +30,10 @@ private:
     QLabel *imageLabel;
     QGroupBox *buttons;
     QVBoxLayout *layout;
+    QPushButton *buttonNext;
+    QPushButton *buttonReset;
     QPushButton *buttonQuit;
-    QVector<QImage> images;
-    int currentImage = 0;
+
 
 };
 #endif // MAINWINDOW_H
